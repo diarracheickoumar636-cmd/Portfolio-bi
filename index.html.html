@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Analyst Portfolio | Cheick Oumar Diarra</title>
+    <!-- Tailwind CSS Loading -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-accent': '#06b6d4',
+                        'secondary-accent': '#F97316',
+                        'accent-header': '#0EA5E9',
+                        'accent-violet': '#8B5CF6',
+                        'accent-vert': '#10B981',
+                        'accent-marron': '#8A3324',
+                        'accent-violet-hover': '#7b4bd3',
+                        'accent-vert-hover': '#0d8969',
+                        'accent-marron-hover': '#6b281c',
+                        'secondary-accent-hover': '#d96314',
+                        'light-bg': '#F3F4F6',
+                        'card-bg': '#FFFFFF',
+                        'text-dark': '#1F2937',
+                        'text-light': '#FFFFFF',
+                        'text-muted': '#4B5563',
+                        'header-bg-static': '#EFF6FF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        @keyframes slide-up-fade {
+            0% { opacity: 0; transform: translateY(60px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        .fade-in-section.visible {
+            opacity: 1;
+            animation: slide-up-fade 0.8s forwards ease-out; 
+        }
+
+        .card-hover-effect {
+            transition: all 0.3s ease-in-out;
+            border-bottom: 4px solid transparent; 
+        }
+        
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(6, 182, 212, 0.5);
+            border-bottom-color: #F97316;
+        }
+
+        @keyframes sweep {
+            0% { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
+            100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+
+        .animated-title {
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            animation: sweep 1.2s forwards; 
+            animation-delay: 0.2s;
+            display: inline-block;
+            color: #1F2937;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(-40px); }
+            5% { opacity: 1; transform: translateY(0); }
+            85% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-40px); }
+        }
+
+        #welcome-message {
+            animation: fadeInOut 5s ease-in-out forwards; 
+            display: none; 
+            z-index: 1000;
+        }
+
+        .animated-hero-bg {
+            background-color: #EFF6FF;
+            position: relative;
+            color: #1F2937; 
+        }
+        
+        .profile-photo-filter {
+            filter: brightness(1.05) contrast(1.05);
+        }
+    </style>
+</head>
+<body class="bg-light-bg text-text-dark font-sans antialiased overflow-x-hidden">
+
+    <!-- Welcome Message -->
+    <div id="welcome-message" class="fixed top-8 left-1/2 transform -translate-x-1/2 bg-secondary-accent text-white p-5 rounded-xl shadow-2xl text-xl font-bold border-b-4 border-primary-accent text-center">
+        Welcome to my Portfolio! Enjoy your visit.
+    </div>
+
+    <!-- Header / Hero Section -->
+    <header class="animated-hero-bg py-16 sm:py-24 shadow-2xl border-b-4 border-accent-header fade-in-section">
+        <div class="container mx-auto px-4 text-center">
+            <div class="fade-in-section">
+                <img 
+                    src="https://raw.githubusercontent.com/diarracheickoumar636-cmd/Cheick/main/Gemini_Generated_Image_adrnd0adrnd0adrn%20(1).png" 
+                    alt="Cheick Oumar Diarra Profile Photo" 
+                    class="w-64 h-64 rounded-full mx-auto mb-4 object-cover border-4 border-secondary-accent shadow-lg profile-photo-filter"
+                    onerror="this.onerror=null; this.src='https://placehold.co/256x256/ECECEC/1F2937?text=CD'"
+                >
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl font-extrabold mb-2 animated-title">
+                Cheick Oumar Diarra
+            </h1>
+            <p class="text-xl sm:text-2xl text-accent-header mb-6 font-semibold">
+                Junior Financial Analyst & Business Analyst | Bilingual
+            </p>
+
+            <div class="mt-4 pt-4 border-t border-text-muted/20 max-w-xl mx-auto">
+                <h2 class="text-xl font-semibold text-secondary-accent mb-3">Business Expertise</h2>
+                <ul class="text-text-dark space-y-1 text-base sm:text-lg flex flex-wrap justify-center">
+                    <li class="inline-block mx-2 mb-2 p-2 bg-white/70 rounded-lg border border-text-muted/30">💵 Financial Analysis & Audit</li>
+                    <li class="inline-block mx-2 mb-2 p-2 bg-white/70 rounded-lg border border-text-muted/30">🌐 Bilingual (French/English)</li>
+                    <li class="inline-block mx-2 mb-2 p-2 bg-white/70 rounded-lg border border-text-muted/30">📊 Power BI & Data Storytelling</li>
+                    <li class="inline-block mx-2 mb-2 p-2 bg-white/70 rounded-lg border border-text-muted/30">🚀 Process Optimization</li>
+                </ul>
+            </div>
+
+            <a href="#projects" class="mt-8 inline-block bg-primary-accent hover:bg-secondary-accent text-white font-semibold py-3 px-8 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
+                Explore my Business Cases
+            </a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-20 bg-light-bg fade-in-section">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-4xl font-bold text-center text-primary-accent mb-10">About Me</h2>
+            <div class="bg-card-bg p-8 rounded-xl shadow-lg border border-secondary-accent/20">
+                <p class="text-lg text-text-dark leading-relaxed mb-4">
+                    My passion for optimizing corporate performance led me to the role of <b>Business Analyst</b>. With a solid foundation in <b>Accounting</b> and a <b>bilingual</b> (French/English) advantage, I position myself as a bridge between raw data and strategic decisions.
+                </p>
+                <p class="text-lg text-text-dark leading-relaxed mb-4">
+                    My approach combines the rigor of <b>Financial Analysis</b> with the technological power of <b>Business Intelligence</b>. I use tools like <b>Power BI, Excel, and Python</b> not just to visualize numbers, but to identify growth opportunities and solve complex business problems.
+                </p>
+                <p class="text-lg text-text-dark leading-relaxed mb-4">
+                    My 6-month internship at an <b>Audit firm (AE2C)</b> was decisive. I audited various structures (NGOs, banks, industries), developing a critical analysis of <b>Internal Control</b> and a deep understanding of operational compliance.
+                </p>
+                <p class="text-lg text-text-dark leading-relaxed">
+                    Today, I am committed to transforming data complexity into clear, actionable <b>strategic recommendations</b> for decision-makers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 sm:py-20 bg-light-bg fade-in-section">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center text-primary-accent mb-12">My Business Analyst Services</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Service 1: Business Intelligence -->
+                <div class="bg-accent-violet p-6 rounded-xl shadow-lg border border-accent-violet/50 card-hover-effect">
+                    <h3 class="text-xl font-semibold mb-3 text-text-light flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19h12M9 19c0 1.105-2.239 2-5 2s-5-.895-5-2h10zM12 21.5c-2.761 0-5.5-.895-5.5-2m5.5 2V6"></path></svg>
+                        BI & Data Analysis
+                    </h3>
+                    <ul class="space-y-2 text-text-light list-disc list-inside ml-4">
+                        <li><b>Data Mining:</b> Extraction and cleaning (ETL).</li>
+                        <li><b>Dashboards:</b> Interactive Power BI reporting for KPI tracking.</li>
+                        <li><b>Insights:</b> Translating trends into business opportunities.</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Financial Strategy -->
+                <div class="bg-accent-vert p-6 rounded-xl shadow-lg border border-accent-vert/50 card-hover-effect">
+                    <h3 class="text-xl font-semibold mb-3 text-text-light flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8V6m0 16v-2"></path></svg>
+                        Financial Analysis & Optimization
+                    </h3>
+                    <ul class="space-y-2 text-text-light list-disc list-inside ml-4">
+                        <li><b>Profitability:</b> Margin and cost structure analysis.</li>
+                        <li><b>Forecasting:</b> Short/medium-term budgeting and planning.</li>
+                        <li><b>Decision Support:</b> Recommendations for expense reduction.</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Audit and Processes -->
+                <div class="bg-accent-marron p-6 rounded-xl shadow-lg border border-accent-marron/50 card-hover-effect">
+                    <h3 class="text-xl font-semibold mb-3 text-text-light flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Internal Audit & Business Process
+                    </h3>
+                    <ul class="space-y-2 text-text-light list-disc list-inside ml-4">
+                        <li><b>Compliance:</b> Auditing procedures and supporting documents.</li>
+                        <li><b>Risk Management:</b> Identifying operational gaps.</li>
+                        <li><b>Process Mapping:</b> Improving administrative workflows.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 sm:py-20 bg-light-bg fade-in-section">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center text-primary-accent mb-12">Business Analyst Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Visualization -->
+                <div class="bg-accent-violet p-6 rounded-xl shadow-lg border border-text-muted/20 card-hover-effect">
+                    <h3 class="text-xl font-semibold mb-3 text-text-light">
+                        Visualization & BI
+                    </h3>
+                    <ul class="space-y-2 text-text-light">
+                        <li><b>Power BI</b> (DAX, complex reporting)</li>
+                        <li><b>Advanced Excel</b> (Modeling, VBA)</li>
+                        <li><b>Tableau Software</b> (Storytelling)</li>
+                        <li><b>Python</b> (Matplotlib, Seaborn)</li>
+                    </ul>
+                </div>
+
+                <!-- Business Analysis -->
+                <div class="bg-secondary-accent p-6 rounded-xl shadow-lg border border-text-muted/20 card-hover-effect">
+                    <h3 class="text-xl font-semibold mb-3 text-text-light">
+                        Business & Finance
+                    </h3>
+                    <ul class="space-y-2 text-text-light">
+                        <li><b>Profitability Analysis</b> (COGS, Margins)</li>
+                        <li><b>Procedure Auditing</b> & Control</li>
+                        <li><b>Python Pandas</b> (Data Wrangling)</li>
+                        <li><b>SQL</b> (Business data extraction)</li>
+                    </ul>
+                </div>
+
+                <!-- Communication -->
+                <div class="bg-accent-marron p-6 rounded-xl shadow-lg border border-text-muted/20 card-hover-effect">
+                    <h3 class="text-xl font-semibold mb-3 text-text-light">
+                        Communication & Soft Skills
+                    </h3>
+                    <ul class="space-y-2 text-text-light">
+                        <li><b>Bilingual French/English</b></li>
+                        <li>Critical thinking & problem solving</li>
+                        <li>Ability to synthesize for executives</li>
+                        <li>Agile environment experience</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 sm:py-20 bg-light-bg fade-in-section">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center text-primary-accent mb-12">Key Business Projects</h2>
+
+            <div class="space-y-12">
+                <!-- Project ChocolateCo -->
+                <div class="bg-card-bg p-8 rounded-xl shadow-xl border border-secondary-accent/10 card-hover-effect">
+                    <h3 class="text-3xl font-bold text-secondary-accent mb-3">1. Product Profitability Audit (ChocolateCo)</h3>
+                    <p class="text-text-muted mb-4 italic">Business Analytics | Power BI | Margin Modeling</p>
+                    <p class="text-lg text-text-dark mb-6">
+                        Analysis of a strategic misalignment between sales volume and real profitability. The study revealed that the best-selling product was not the most profitable due to unmanaged COGS.
+                    </p>
+                    <img src="https://raw.githubusercontent.com/diarracheickoumar636-cmd/Cheick/main/WhatsApp%20Image%202025-07-06%20at%2016.26.41_01f18c3d.jpg" alt="Business Analyst Dashboard ChocolateCo" class="w-full rounded-lg shadow-md border border-text-muted/50">
+                </div>
+
+                <!-- Project Pizzeria -->
+                <div class="bg-card-bg p-8 rounded-xl shadow-xl border border-secondary-accent/10 card-hover-effect">
+                    <h3 class="text-3xl font-bold text-secondary-accent mb-3">2. Operational Flow Optimization (Pizzeria)</h3>
+                    <p class="text-text-muted mb-4 italic">Business Intelligence | Customer Behavior Analysis</p>
+                    <p class="text-lg text-text-dark mb-6">
+                        Identified revenue leakage on Fridays and recommended a "Bundle Marketing" campaign based on family average basket analysis.
+                    </p>
+                    <img src="https://raw.githubusercontent.com/diarracheickoumar636-cmd/Cheick/main/IMG_1471.PNG" alt="Pizzeria Business Sales Analysis" class="w-full rounded-lg shadow-md border border-text-muted/50">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-card-bg py-16 border-t border-primary-accent/50 fade-in-section">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-primary-accent mb-6">Ready to optimize your processes?</h2>
+            <p class="text-xl text-text-muted mb-8">
+                Let's talk about how Business Intelligence can transform your results.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 text-lg">
+                <a href="mailto:diarracheickoumar636@gmail.com" class="bg-primary-accent hover:bg-secondary-accent text-white font-semibold py-2 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                    diarracheickoumar636@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/cheick-oumar-diarra-170782266" target="_blank" class="bg-secondary-accent hover:bg-primary-accent text-white font-semibold py-2 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                    LinkedIn
+                </a>
+            </div>
+            <p class="text-text-muted mt-12 text-sm">
+                &copy; 2025 Cheick Oumar Diarra Portfolio | Business Analyst & Financial Analyst.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="back-to-top" class="fixed bottom-6 right-6 p-3 bg-secondary-accent text-white rounded-full shadow-lg hover:bg-primary-accent transition-all duration-300 opacity-0 transform translate-y-4">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Show welcome message
+            const welcomeMessage = document.getElementById('welcome-message');
+            welcomeMessage.style.display = 'block';
+
+            // Observer for section animations
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Back to top button management
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTop.classList.remove('opacity-0', 'translate-y-4');
+                    backToTop.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    backToTop.classList.add('opacity-0', 'translate-y-4');
+                    backToTop.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
